@@ -17,18 +17,23 @@ import com.lab.flowerstore.flower.Item;
 import com.lab.flowerstore.payment.PayPalPaymentStrategy;
 import com.lab.flowerstore.payment.Payment;
 
+import lombok.Getter;
+
 @RestController
 @RequestMapping
 public class OrderController {
-    final int id1 = 1;
-    final double sepalLength1 = 45.0;
-    final double price1 = 40.0;
+    @Getter
+    private final int ID = 1;
+    @Getter
+    private final double SEPALLENGTH = 45.0;
+    @Getter
+    private final double PRICE = 40.0;
 
     private Order<Item> order = new Order<>(new PayPalPaymentStrategy(),
          new DHLDeliveryStrategy(),
-         List.of(new Flower(id1, sepalLength1, price1,
+         List.of(new Flower(ID, SEPALLENGTH, PRICE,
          FlowerColor.PINK, FlowerType.TULIP),
-         new Flower(id1, sepalLength1, price1,
+         new Flower(ID, SEPALLENGTH, PRICE,
          FlowerColor.RED, FlowerType.ROSE)));
 
     @GetMapping("api/order/show-order")

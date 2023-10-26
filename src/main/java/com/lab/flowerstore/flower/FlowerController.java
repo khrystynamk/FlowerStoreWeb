@@ -9,23 +9,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/flower")
 public class FlowerController {
-	private final FlowerService flowerService;
+    private final FlowerService flowerService;
 
     @GetMapping("/")
-	public List<Flower> flower() {
-		final double sepalLength = 45.0;
-		final double price = 40.0;
-		final int id = 1;
-		return List.of(new Flower(id, sepalLength, price, FlowerColor.PINK, FlowerType.TULIP));
-	}
+    public List<Flower> flower() {
+        final double SEPALLENGTH = 45.0;
+        final double PRICE = 40.0;
+        final int ID = 1;
+        return List.of(new Flower(ID, SEPALLENGTH, PRICE,
+                 FlowerColor.PINK, FlowerType.TULIP));
+    }
 
-	@Autowired
-	public FlowerController(FlowerService flowerService) {
-		this.flowerService = flowerService;
-	}
+    @Autowired
+    public FlowerController(FlowerService flowerService) {
+        this.flowerService = flowerService;
+    }
 
-	@GetMapping("/list")
-	public List<Flower> listFlower() {
-		return flowerService.getFlowers();
-	}
+    @GetMapping("/list")
+    public List<Flower> listFlower() {
+        return flowerService.getFlowers();
+    }
 }

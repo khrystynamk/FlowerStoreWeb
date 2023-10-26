@@ -12,28 +12,29 @@ import lombok.Getter;
 @RestController
 @RequestMapping("/api/payment")
 public class PaymentController {
-	@Getter
-	private PayPalPaymentStrategy payPal = new PayPalPaymentStrategy();
-	@Getter
-	private CreditCardPaymentStrategy creditCard = new CreditCardPaymentStrategy();
+    @Getter
+    private PayPalPaymentStrategy payPal = new PayPalPaymentStrategy();
+    @Getter
+    private CreditCardPaymentStrategy creditCard = 
+                        new CreditCardPaymentStrategy();
 
-	@GetMapping("/")
-	public List < ? > payment() {
-		return List.of(creditCard.getClass().getSimpleName(),
-			 payPal.getClass().getSimpleName());
-	}
+    @GetMapping("/")
+    public List<?> payment() {
+        return List.of(creditCard.getClass().getSimpleName(),
+                    payPal.getClass().getSimpleName());
+    }
 
-	@GetMapping("/paypal")
-	public String paypal() {
-		final double price1 = 40.0;
-		return payPal.pay(price1);
-	}
+    @GetMapping("/paypal")
+    public String paypal() {
+        final double PRICE1 = 40.0;
+        return payPal.pay(PRICE1);
+    }
 
-	@GetMapping("/creditcard")
-	public String creditcard() {
-		final double price2 = 40.0;
-		return creditCard.pay(price2);
-	}
+    @GetMapping("/creditcard")
+    public String creditcard() {
+        final double PRICE2 = 40.0;
+        return creditCard.pay(PRICE2);
+    }
 }
 // payment - page with listed payment methods
 // payment/paypal - page of paypal payment

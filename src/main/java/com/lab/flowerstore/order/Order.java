@@ -47,12 +47,12 @@ public class Order<Thing extends Item> {
              + "Total price of your order is " + price);
     }
 
-    public void setPaymentStrategy(Payment payment) {
-        this.payment = payment;
+    public void setPaymentStrategy(Payment newPayment) {
+        this.payment = newPayment;
     }
 
-    public void setDeliveryStrategy(Delivery delivery) {
-        this.delivery = delivery;
+    public void setDeliveryStrategy(Delivery newDelivery) {
+        this.delivery = newDelivery;
     }
 
     public double calculateTotalPrice() {

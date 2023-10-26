@@ -15,7 +15,9 @@ import com.lab.flowerstore.flower.Flower;
 @RestController
 @RequestMapping("/api/delivery")
 public class DeliveryController {
+    @Getter
     private DHLDeliveryStrategy dhlDelivery = new DHLDeliveryStrategy();
+    @Getter
     private PostDeliveryStrategy postDelivery = new PostDeliveryStrategy();
 
     @GetMapping("/")
