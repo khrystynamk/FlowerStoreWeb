@@ -14,7 +14,7 @@ public class PaymentController {
     CreditCardPaymentStrategy creditCard = new CreditCardPaymentStrategy();
 
     @GetMapping("/")
-	public List<?> payment() {
+	public List< ? > payment() {
 		return List.of(creditCard.getClass().getSimpleName(), payPal.getClass().getSimpleName());
 	}
 

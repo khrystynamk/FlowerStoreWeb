@@ -11,8 +11,8 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class Order<Thing extends Item> {
-    protected Payment payment;
-    protected Delivery delivery;
+    private Payment payment;
+    private Delivery delivery;
     private List<Thing> items = new ArrayList<>();
 
     void addItem(Thing newItem) {
@@ -20,7 +20,7 @@ public class Order<Thing extends Item> {
     }
 
     void removeItem(Thing item) {
-        if (items.contains(item)){
+        if (items.contains(item)) {
             items.remove(item);
         }
         System.out.println("You cannot remove an item that is not in your cart!");
@@ -28,11 +28,23 @@ public class Order<Thing extends Item> {
 
     public String processOrder() {
         double price = calculateTotalPrice();
-        String paymnt = ((payment==null)? "null" : payment.toString());
-        String delivr = ((delivery==null)? "null" : delivery.toString());
-        return ("Your order consists of the following items: " + items.toString() + "\n"
-             + "You have chosen the following way of [PAYMENT]: " + paymnt.getClass().getSimpleName() + "\n"
-             + "You have chosen the following way of [DELIVERY]: " + delivr.getClass().getSimpleName() + "\n"
+        String paymnt = "null";
+        String delivr = "null";
+
+        if (payment != null) {
+            paymnt = payment.toString();
+        }
+
+        if (delivery != null) {
+            delivr = payment.toString();
+        }
+
+        return ("Your order consists of the following items: " 
+             + items.toString() + "\n"
+             + "You have chosen the following way of [PAYMENT]: " 
+             + paymnt.getClass().getSimpleName() + "\n"
+             + "You have chosen the following way of [DELIVERY]: " 
+             + delivr.getClass().getSimpleName() + "\n"
              + "Total price of your order is " + price);
     }
 
