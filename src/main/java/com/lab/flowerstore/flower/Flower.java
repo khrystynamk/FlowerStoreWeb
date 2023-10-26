@@ -1,4 +1,4 @@
-package com.lab7.lab72.flower;
+package com.lab.flowerstore.flower;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

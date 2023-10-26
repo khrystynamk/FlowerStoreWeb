@@ -1,4 +1,4 @@
-package com.lab7.lab72.flower;
+package com.lab.flowerstore.flower;
 import java.util.List;
 import org.springframework.stereotype.Service;
 

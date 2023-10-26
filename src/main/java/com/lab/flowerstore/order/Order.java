@@ -1,11 +1,11 @@
-package com.lab7.lab72.order;
+package com.lab.flowerstore.order;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.lab7.lab72.delivery.Delivery;
-import com.lab7.lab72.flower.Item;
-import com.lab7.lab72.payment.Payment;
+import com.lab.flowerstore.delivery.Delivery;
+import com.lab.flowerstore.flower.Item;
+import com.lab.flowerstore.payment.Payment;
 
 import lombok.AllArgsConstructor;
 

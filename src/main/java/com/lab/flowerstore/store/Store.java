@@ -1,14 +1,14 @@
-package com.lab7.lab72.store;
+package com.lab.flowerstore.store;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.lab7.lab72.filters.Filter;
-import com.lab7.lab72.filters.FlowerFilter;
-import com.lab7.lab72.flower.Flower;
-import com.lab7.lab72.flower.FlowerColor;
-import com.lab7.lab72.flower.FlowerType;
-import com.lab7.lab72.flower.Item;
+import com.lab.flowerstore.filters.Filter;
+import com.lab.flowerstore.filters.FlowerFilter;
+import com.lab.flowerstore.flower.Flower;
+import com.lab.flowerstore.flower.FlowerColor;
+import com.lab.flowerstore.flower.FlowerType;
+import com.lab.flowerstore.flower.Item;
 
 import lombok.Getter;
 import lombok.Setter;

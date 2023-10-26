@@ -1,4 +1,4 @@
-package com.lab7.lab72.order;
+package com.lab.flowerstore.order;
 
 import java.util.List;
 
@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lab7.lab72.delivery.DHLDeliveryStrategy;
-import com.lab7.lab72.delivery.Delivery;
-import com.lab7.lab72.flower.Flower;
-import com.lab7.lab72.flower.FlowerColor;
-import com.lab7.lab72.flower.FlowerType;
-import com.lab7.lab72.flower.Item;
-import com.lab7.lab72.payment.PayPalPaymentStrategy;
-import com.lab7.lab72.payment.Payment;
+import com.lab.flowerstore.delivery.DHLDeliveryStrategy;
+import com.lab.flowerstore.delivery.Delivery;
+import com.lab.flowerstore.flower.Flower;
+import com.lab.flowerstore.flower.FlowerColor;
+import com.lab.flowerstore.flower.FlowerType;
+import com.lab.flowerstore.flower.Item;
+import com.lab.flowerstore.payment.PayPalPaymentStrategy;
+import com.lab.flowerstore.payment.Payment;
 
 @RestController
 @RequestMapping

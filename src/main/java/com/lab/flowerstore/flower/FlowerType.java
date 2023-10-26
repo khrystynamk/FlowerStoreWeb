@@ -1,4 +1,4 @@
-package com.lab7.lab72.flower;
+package com.lab.flowerstore.flower;
 
 public enum FlowerType {
     CHAMOMILE, ROSE, TULIP;

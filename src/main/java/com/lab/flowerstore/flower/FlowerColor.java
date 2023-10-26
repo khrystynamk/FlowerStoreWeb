@@ -1,5 +1,4 @@
-package com.lab7.lab72.flower;
-
+package com.lab.flowerstore.flower;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import lombok.Getter;

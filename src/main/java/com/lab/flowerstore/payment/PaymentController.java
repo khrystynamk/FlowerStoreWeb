@@ -1,4 +1,4 @@
-package com.lab7.lab72.payment;
+package com.lab.flowerstore.payment;
 
 import java.util.List;
 

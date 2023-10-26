@@ -1,9 +1,9 @@
-package com.lab7.lab72.filters;
+package com.lab.flowerstore.filters;
 
-import com.lab7.lab72.flower.Flower;
-import com.lab7.lab72.flower.FlowerColor;
-import com.lab7.lab72.flower.FlowerType;
-import com.lab7.lab72.flower.Item;
+import com.lab.flowerstore.flower.Flower;
+import com.lab.flowerstore.flower.FlowerColor;
+import com.lab.flowerstore.flower.FlowerType;
+import com.lab.flowerstore.flower.Item;
 
 public class FlowerFilter implements Filter {
     private FlowerColor colorToFilter;

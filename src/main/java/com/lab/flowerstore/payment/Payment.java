@@ -1,4 +1,4 @@
-package com.lab7.lab72.payment;
+package com.lab.flowerstore.payment;
 
 public interface Payment {
     String pay(double price);

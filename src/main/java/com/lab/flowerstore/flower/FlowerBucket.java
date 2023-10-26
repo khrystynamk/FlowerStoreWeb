@@ -1,5 +1,4 @@
-package com.lab7.lab72.flower;
-
+package com.lab.flowerstore.flower;
 
 import java.util.ArrayList;
 import java.util.List;
