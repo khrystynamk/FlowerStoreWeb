@@ -1,4 +1,4 @@
-package com.lab7.lab7_2.order;
+package com.lab7.lab72.order;
 
 import java.util.List;
 
@@ -8,19 +8,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lab7.lab7_2.payment.PayPalPaymentStrategy;
-import com.lab7.lab7_2.payment.Payment;
-import com.lab7.lab7_2.delivery.Delivery;
-import com.lab7.lab7_2.delivery.DHLDeliveryStrategy;
-import com.lab7.lab7_2.flower.Item;
-import com.lab7.lab7_2.flower.Flower;
-import com.lab7.lab7_2.flower.FlowerColor;
-import com.lab7.lab7_2.flower.FlowerType;
+import com.lab7.lab72.delivery.DHLDeliveryStrategy;
+import com.lab7.lab72.delivery.Delivery;
+import com.lab7.lab72.flower.Flower;
+import com.lab7.lab72.flower.FlowerColor;
+import com.lab7.lab72.flower.FlowerType;
+import com.lab7.lab72.flower.Item;
+import com.lab7.lab72.payment.PayPalPaymentStrategy;
+import com.lab7.lab72.payment.Payment;
 
 @RestController
 @RequestMapping
 public class OrderController {
-    private Order<Item> order = new Order<>(new PayPalPaymentStrategy(), new DHLDeliveryStrategy(), List.of(new Flower(1, 45.0, 40.0, FlowerColor.PINK, FlowerType.TULIP), new Flower(2, 60.0, 70.0, FlowerColor.RED, FlowerType.ROSE)));
+    final int id1 = 1;
+    final double sepalLength1 = 45.0;
+    final double price1 = 40.0;
+
+    private Order<Item> order = new Order<>(new PayPalPaymentStrategy(),
+         new DHLDeliveryStrategy(),
+         List.of(new Flower(id1, sepalLength1, price1,
+         FlowerColor.PINK, FlowerType.TULIP),
+         new Flower(id1, sepalLength1, price1,
+         FlowerColor.RED, FlowerType.ROSE)));
+
     @GetMapping("api/order/show-order")
     public String showOrder() {
         return order.processOrder();

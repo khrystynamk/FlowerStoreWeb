@@ -1,4 +1,4 @@
-package com.lab7.lab7_2.flower;
+package com.lab7.lab72.flower;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 

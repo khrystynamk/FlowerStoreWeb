@@ -1,4 +1,4 @@
-package com.lab7.lab7_2.flower;
+package com.lab7.lab72.flower;
 
 import java.util.List;
 
@@ -14,16 +14,19 @@ public class FlowerController {
 
     @GetMapping("/")
 	public List<Flower> flower() {
-		return List.of(new Flower(1, 45.0, 40.0, FlowerColor.PINK, FlowerType.TULIP));
+		final double sepalLength = 45.0;
+		final double price = 40.0;
+		final int id = 1;
+		return List.of(new Flower(id, sepalLength, price, FlowerColor.PINK, FlowerType.TULIP));
 	}
 
 	@Autowired
-	public FlowerController(FlowerService flowerService){
+	public FlowerController(FlowerService flowerService) {
 		this.flowerService = flowerService;
 	}
 
 	@GetMapping("/list")
-	public List<Flower> ListFlower() {
+	public List<Flower> listFlower() {
 		return flowerService.getFlowers();
 	}
 }

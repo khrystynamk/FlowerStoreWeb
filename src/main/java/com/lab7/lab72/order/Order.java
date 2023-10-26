@@ -1,11 +1,11 @@
-package com.lab7.lab7_2.order;
+package com.lab7.lab72.order;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.lab7.lab7_2.delivery.Delivery;
-import com.lab7.lab7_2.flower.Item;
-import com.lab7.lab7_2.payment.Payment;
+import com.lab7.lab72.delivery.Delivery;
+import com.lab7.lab72.flower.Item;
+import com.lab7.lab72.payment.Payment;
 
 import lombok.AllArgsConstructor;
 
@@ -23,7 +23,6 @@ public class Order<Thing extends Item> {
         if (items.contains(item)) {
             items.remove(item);
         }
-        System.out.println("You cannot remove an item that is not in your cart!");
     }
 
     public String processOrder() {
@@ -36,7 +35,7 @@ public class Order<Thing extends Item> {
         }
 
         if (delivery != null) {
-            delivr = payment.toString();
+            delivr = delivery.toString();
         }
 
         return ("Your order consists of the following items: " 
