@@ -21,7 +21,7 @@ public class DeliveryController {
     private PostDeliveryStrategy postDelivery = new PostDeliveryStrategy();
 
     @GetMapping("/")
-    public List<?> delivery() {
+    public List<String> delivery() {
         return List.of(dhlDelivery.getClass().getSimpleName(),
                 postDelivery.getClass().getSimpleName());
     }
@@ -31,7 +31,8 @@ public class DeliveryController {
         final double SEPALLENGTH = 45.0;
         final double PRICE = 40.0;
         final int ID = 1;
-        return postDelivery.deliver(List.of(new Flower(ID, SEPALLENGTH, PRICE, FlowerColor.PINK, FlowerType.TULIP)));
+        return postDelivery.deliver(List.of(new Flower(ID, SEPALLENGTH,
+                     PRICE, FlowerColor.PINK, FlowerType.TULIP)));
     }
 
     @GetMapping("/dhl")
@@ -39,7 +40,8 @@ public class DeliveryController {
         final double SEPALLENGTH = 45.0;
         final double PRICE = 40.0;
         final int ID = 1;
-        return dhlDelivery.deliver(List.of(new Flower(ID, SEPALLENGTH, PRICE, FlowerColor.PINK, FlowerType.TULIP)));
+        return dhlDelivery.deliver(List.of(new Flower(ID, SEPALLENGTH,
+                     PRICE, FlowerColor.PINK, FlowerType.TULIP)));
     }
 }
 // delivery - page with listed delivery methods

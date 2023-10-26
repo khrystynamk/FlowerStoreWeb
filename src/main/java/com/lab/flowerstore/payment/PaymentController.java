@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.Getter;
 
-
 @RestController
 @RequestMapping("/api/payment")
 public class PaymentController {
@@ -19,21 +18,21 @@ public class PaymentController {
                         new CreditCardPaymentStrategy();
 
     @GetMapping("/")
-    public List<?> payment() {
+    public List<String> payment() {
         return List.of(creditCard.getClass().getSimpleName(),
                     payPal.getClass().getSimpleName());
     }
 
     @GetMapping("/paypal")
     public String paypal() {
-        final double PRICE1 = 40.0;
-        return payPal.pay(PRICE1);
+        final double PRICE = 40.0;
+        return payPal.pay(PRICE);
     }
 
     @GetMapping("/creditcard")
     public String creditcard() {
-        final double PRICE2 = 40.0;
-        return creditCard.pay(PRICE2);
+        final double PRICE = 40.0;
+        return creditCard.pay(PRICE);
     }
 }
 // payment - page with listed payment methods

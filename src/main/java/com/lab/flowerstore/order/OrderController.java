@@ -23,17 +23,17 @@ import lombok.Getter;
 @RequestMapping
 public class OrderController {
     @Getter
-    private final int ID = 1;
+    private final int id = 1;
     @Getter
-    private final double SEPALLENGTH = 45.0;
+    private final double sepallength = 45.0;
     @Getter
-    private final double PRICE = 40.0;
+    private final double price = 40.0;
 
     private Order<Item> order = new Order<>(new PayPalPaymentStrategy(),
          new DHLDeliveryStrategy(),
-         List.of(new Flower(ID, SEPALLENGTH, PRICE,
+         List.of(new Flower(id, sepallength, price,
          FlowerColor.PINK, FlowerType.TULIP),
-         new Flower(ID, SEPALLENGTH, PRICE,
+         new Flower(id, sepallength, price,
          FlowerColor.RED, FlowerType.ROSE)));
 
     @GetMapping("api/order/show-order")

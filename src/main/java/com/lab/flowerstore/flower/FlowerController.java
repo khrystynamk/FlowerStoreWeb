@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class FlowerController {
     private final FlowerService flowerService;
 
+    @Autowired
+    public FlowerController(FlowerService flowerService) {
+        this.flowerService = flowerService;
+    }
+
     @GetMapping("/")
     public List<Flower> flower() {
         final double SEPALLENGTH = 45.0;
@@ -18,11 +23,6 @@ public class FlowerController {
         final int ID = 1;
         return List.of(new Flower(ID, SEPALLENGTH, PRICE,
                  FlowerColor.PINK, FlowerType.TULIP));
-    }
-
-    @Autowired
-    public FlowerController(FlowerService flowerService) {
-        this.flowerService = flowerService;
     }
 
     @GetMapping("/list")
