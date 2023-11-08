@@ -17,9 +17,9 @@ public class PaymentTests {
     private Payment creditCardPay;
     private Payment payPal;
     @Getter
-    private final double PRICE = 100.0;
+    private final double price = 100.0;
     @Getter
-    private final double ZEROPRICE = 0.0;
+    private final double zeroPrice = 0.0;
 
     @BeforeEach
     public void init() {
@@ -29,7 +29,7 @@ public class PaymentTests {
 
     @Test
     public void testCreditCardPaymentNonZero() {
-        String paidByCard = creditCardPay.pay(PRICE);
+        String paidByCard = creditCardPay.pay(price);
         Assertions.assertTrue(paidByCard.contains(
                         "Paying 100.0 via credit card..."
                         ));
@@ -37,7 +37,7 @@ public class PaymentTests {
 
     @Test
     public void testPayPalPaymentNonZero() {
-        String paidByPayPal = payPal.pay(PRICE);
+        String paidByPayPal = payPal.pay(price);
         Assertions.assertTrue(paidByPayPal.contains(
                         "Paying 100.0 via PayPal..."
                         ));
@@ -45,7 +45,7 @@ public class PaymentTests {
 
     @Test
     public void testPayPalPaymentZero() {
-        String paidByPayPal = payPal.pay(ZEROPRICE);
+        String paidByPayPal = payPal.pay(zeroPrice);
         Assertions.assertFalse(paidByPayPal.contains(
                         "You have not purchased anything"
                         ));
@@ -53,7 +53,7 @@ public class PaymentTests {
 
     @Test
     public void testCreditCardPaymentZero() {
-        String paidByCard = creditCardPay.pay(ZEROPRICE);
+        String paidByCard = creditCardPay.pay(zeroPrice);
         Assertions.assertFalse(paidByCard.contains(
                         "You have not purchased anything"
                         ));
