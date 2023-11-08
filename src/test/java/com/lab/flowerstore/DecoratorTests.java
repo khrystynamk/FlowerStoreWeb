@@ -39,8 +39,8 @@ public class DecoratorTests {
     @Test
     public void testPriceRibbon() {
         double basePrice = flowerBucket.getPrice();
-        final double ribbonPrice = 40;
-        Assertions.assertEquals(basePrice + ribbonPrice,
+        final double RIBBON = 40;
+        Assertions.assertEquals(basePrice + RIBBON,
                 flowerBucketRibbon.getPrice());
     }
 
@@ -61,8 +61,8 @@ public class DecoratorTests {
     @Test
     public void testPriceBasket() {
         double basePrice = flowerBucket.getPrice();
-        final double basketPrice = 4;
-        Assertions.assertEquals(basePrice + basketPrice,
+        final double BASKET = 4;
+        Assertions.assertEquals(basePrice + BASKET,
                 flowerBucketBasket.getPrice());
     }
 
@@ -82,8 +82,8 @@ public class DecoratorTests {
     @Test
     public void testPricePaper() {
         double basePrice = flowerBucket.getPrice();
-        final double paperPrice = 13;
-        Assertions.assertEquals(basePrice + paperPrice,
+        final double PAPER = 13;
+        Assertions.assertEquals(basePrice + PAPER,
                 flowerBucketPaper.getPrice());
     }
 
