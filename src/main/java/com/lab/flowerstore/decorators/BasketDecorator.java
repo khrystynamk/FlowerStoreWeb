@@ -5,7 +5,6 @@ import com.lab.flowerstore.flower.Item;
 public class BasketDecorator extends ItemDecorator {
     public BasketDecorator(Item item) {
         super(item);
-        item.setDescription("[DECORATOR TYPE]: Basket");
     }
 
     public double getPrice() {

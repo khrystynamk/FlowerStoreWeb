@@ -45,17 +45,10 @@ public class DecoratorTests {
     }
 
     @Test
-    public void testDescriptionRibbon() {
-        String expectedDescription = "[DECORATOR TYPE]: Ribbon";
-        Assertions.assertEquals(expectedDescription,
-                flowerBucketRibbon.getDescription());
-    }
-
-    @Test
     public void testItemOriginalFunctionalityRibbon() {
-        double flowerBucketPrice = flowerBucket.getPrice();
+        final double EXPECTED = 640.0;
         double decoratedFlowerBucketPrice = flowerBucketRibbon.getPrice();
-        Assertions.assertEquals(flowerBucketPrice, decoratedFlowerBucketPrice);
+        Assertions.assertEquals(EXPECTED, decoratedFlowerBucketPrice);
     }
 
     @Test
@@ -67,15 +60,9 @@ public class DecoratorTests {
     }
 
     @Test
-    public void testDescriptionBasket() {
-        String expectedDescription = "[DECORATOR TYPE]: Basket";
-        Assertions.assertEquals(expectedDescription,
-                flowerBucketBasket.getDescription());
-    }
-
-    @Test
     public void testItemOriginalFunctionalityBasket() {
-        Assertions.assertEquals(flowerBucket.getPrice(),
+        final double EXPECTED = 604.0;
+        Assertions.assertEquals(EXPECTED,
                 flowerBucketBasket.getPrice());
     }
 
@@ -88,15 +75,9 @@ public class DecoratorTests {
     }
 
     @Test
-    public void testDescriptionPaper() {
-        String expectedDescription = "[DECORATOR TYPE]: Paper";
-        Assertions.assertEquals(expectedDescription,
-                flowerBucketPaper.getDescription());
-    }
-
-    @Test
     public void testItemOriginalFunctionalityPaper() {
-        Assertions.assertEquals(flowerBucket.getPrice(),
+        final double EXPECTED = 613.0;
+        Assertions.assertEquals(EXPECTED,
                 flowerBucketPaper.getPrice());
     }
 }

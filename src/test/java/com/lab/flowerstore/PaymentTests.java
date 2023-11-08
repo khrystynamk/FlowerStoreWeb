@@ -46,7 +46,7 @@ public class PaymentTests {
     @Test
     public void testPayPalPaymentZero() {
         String paidByPayPal = payPal.pay(zeroPrice);
-        Assertions.assertFalse(paidByPayPal.contains(
+        Assertions.assertTrue(paidByPayPal.contains(
                         "You have not purchased anything"
                         ));
     }
@@ -54,7 +54,7 @@ public class PaymentTests {
     @Test
     public void testCreditCardPaymentZero() {
         String paidByCard = creditCardPay.pay(zeroPrice);
-        Assertions.assertFalse(paidByCard.contains(
+        Assertions.assertTrue(paidByCard.contains(
                         "You have not purchased anything"
                         ));
     }

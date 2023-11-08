@@ -5,7 +5,6 @@ import com.lab.flowerstore.flower.Item;
 public class RibbonDecorator extends ItemDecorator {
     public RibbonDecorator(Item item) {
         super(item);
-        item.setDescription("[DECORATOR TYPE]: Ribbon");
     }
 
     public double getPrice() {
