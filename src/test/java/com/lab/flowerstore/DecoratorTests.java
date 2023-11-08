@@ -26,8 +26,10 @@ public class DecoratorTests {
         final double SEPALLENGTH = 45.0;
         final double PRICE = 40.0;
         final int ID = 1;
-        flower = new Flower(ID, SEPALLENGTH, PRICE, FlowerColor.PINK, FlowerType.TULIP);
-        flowerPack = new FlowerPack(flower, 15);
+        final int QUANTITY = 15;
+        flower = new Flower(ID, SEPALLENGTH, PRICE,
+                    FlowerColor.PINK, FlowerType.TULIP);
+        flowerPack = new FlowerPack(flower, QUANTITY);
         flowerBucket.add(flowerPack);
         flowerBucketRibbon = new RibbonDecorator(flowerBucket);
         flowerBucketBasket = new BasketDecorator(flowerBucket);
@@ -37,7 +39,7 @@ public class DecoratorTests {
     @Test
     public void testPriceRibbon() {
         double basePrice = flowerBucket.getPrice();
-        double ribbonPrice = 40;
+        final double ribbonPrice = 40;
         Assertions.assertEquals(basePrice + ribbonPrice,
                 flowerBucketRibbon.getPrice());
     }
@@ -59,7 +61,7 @@ public class DecoratorTests {
     @Test
     public void testPriceBasket() {
         double basePrice = flowerBucket.getPrice();
-        double basketPrice = 4;
+        final double basketPrice = 4;
         Assertions.assertEquals(basePrice + basketPrice,
                 flowerBucketBasket.getPrice());
     }
@@ -80,7 +82,7 @@ public class DecoratorTests {
     @Test
     public void testPricePaper() {
         double basePrice = flowerBucket.getPrice();
-        double paperPrice = 13;
+        final double paperPrice = 13;
         Assertions.assertEquals(basePrice + paperPrice,
                 flowerBucketPaper.getPrice());
     }
